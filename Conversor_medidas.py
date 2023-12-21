@@ -9,7 +9,7 @@ while True:
     if menu == 3:
         print('Até a próxima!')
         exit()
-    elif menu >= 1 or menu <= 2:
+    elif menu >= 1 or menu <= 2: # APÓS O CÁLCULO, O CÓDIGO RETORNA AO MENU INDESEJADAMENTE
         match menu:
             case 1:
                 calc_ctms = float(input('Digite o valor em metro(s) a converter: '))
