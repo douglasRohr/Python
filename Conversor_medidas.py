@@ -1,6 +1,6 @@
 '''Faça um Programa que converta metros para centímetros'''
 
-# CÓDIGO QUEBRADO
+# CÓDIGO QUEBRADO PARA INICIAR NO GIT
 
 while True:
         menu = int(input('Bem-vindo ao conversor de medidas!\nO que deseja converter?\n[1] Metros em centímetros\n[2] Centímetros em metros\n[3] Sair\nDigite sua opção: '))
