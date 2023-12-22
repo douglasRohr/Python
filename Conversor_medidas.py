@@ -1,13 +1,13 @@
 '''CONVERSOR DE MEDIDAS'''
 
-# CÓDIGO QUEBRADO PARA INICIAR NO GIT
+# CÓDIGO FUNCIONANDO OK
 
-# CÓDIGO QUEBRA QUANDO O USUÁRIO INSERE LETRAS
+# CÓDIGO RETORNA AO MENU CORRETAMENTE QUANDO SÃO INSERIDOS CARACTERES INVÁLIDOS
 
+print('Bem-vindo ao conversor de medidas!')
 while True:
-    menu = int(input('''
-Bem-vindo ao conversor de medidas!
-
+    try: # USADO PARA TRATAMENTO DE ERROS
+        menu = int(input('''
 O que deseja converter?
                                        
 [1] Metros em centímetros
@@ -16,19 +16,16 @@ O que deseja converter?
                                          
 Digite sua opção: '''))
     
-    if menu == 3:
-        print('Até a próxima!')
-        exit()
-    try:
-        if menu >= 1 or menu <= 2: # APÓS O CÁLCULO, O CÓDIGO RETORNA AO MENU INDESEJADAMENTE
-            match menu:
+        if menu == 3:
+            print('Até a próxima!')
+            exit()
+        if menu >= 1 or menu <= 2:
+            match menu: # AJUSTAR RETORNO OPCIONAL AO MENU APÓS A CONVERSÃO
                 case 1:
                     calc_ctms = float(input('Digite o valor em metro(s) a converter: '))
-                    print(f'Convertendo {calc_ctms} metro(s) para centímetro(s) obtemos: {calc_ctms * 100} centímetros\n')
+                    print(f'Convertendo {calc_ctms} metro(s) para centímetro(s) obtemos: {calc_ctms * 100} centímetros.\n')
                 case 2:
                     calc_mts = float(input('Valor em centímetro(s) a converter: '))
-                    print(f'Convertendo {calc_mts} centímetro(s) para metro(s) obtemos: {calc_mts / 100}')
-                case _:
-                    print('Opção inválida. Tente novamente.')
-    except:
-        print('Opção inválida. Tente novamente.')
+                    print(f'Convertendo {calc_mts} centímetro(s) para metro(s) obtemos: {calc_mts / 100} metros.\n')
+    except ValueError:
+        print('\nApenas números, por favor!\n')
